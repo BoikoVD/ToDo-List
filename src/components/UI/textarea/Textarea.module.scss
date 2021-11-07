@@ -1,0 +1,13 @@
+.textarea{
+	padding: 5px 15px;
+	font-size: 18px;
+	border-radius: 5px;
+	outline: none;
+	color: gray;
+	border: 1px solid lightgray;
+	transition: all 0.2s ease 0s;
+	resize: none;
+	&:focus {
+		box-shadow: 0 0 3px gray;
+	}
+}

@@ -1,0 +1,39 @@
+.delete {
+	background: transparent;
+	border: none;
+	padding: 5px;
+	cursor: pointer;
+}
+.deleteNotDone {
+	svg {
+		color: #FF9C9C;
+	}
+	@media (any-hover: hover) {
+		&:hover{
+			svg {
+				color: #BF1414;
+			}
+		}
+	}
+}
+.deleteDone {
+	svg {
+		color: lightgray;
+	}
+	@media (any-hover: hover) {
+		&:hover{
+			svg {
+				color: gray;
+			}
+		}
+	}
+}
+svg {
+	transition: all 0.3s ease 0s;
+	width: 25px;
+	height: 25px;
+	@media (max-width: 480px){
+		width: 20px;
+		height: 20px;
+	}
+}

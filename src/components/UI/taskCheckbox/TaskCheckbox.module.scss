@@ -1,0 +1,38 @@
+.check {
+	flex: 0 0 20px;
+	background-color: transparent;
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	border: 2px solid lightgray;
+	cursor: pointer;
+	position: relative;
+	&::before, &::after {
+		content: "";
+		position: absolute;
+		top: 20%;
+		left: 50%;
+		height: 3px;
+		background-color: gray;
+	}
+	&::before {
+		width: 10px;
+		transform: translate(-100%, 50%) rotate(45deg);
+	}
+	&::after {
+		width: 20px;
+		transform: translate(-25%, 0) rotate(-45deg);
+	}
+}
+.checkDone {
+	&::before, &::after {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+.checkNotDone {
+	&::before, &::after {
+		opacity: 0;
+		visibility: hidden;
+	}
+}

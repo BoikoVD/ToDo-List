@@ -1,0 +1,14 @@
+.modalAddTask {
+	display: flex;
+	flex-direction: column;
+	input, textarea {
+		margin-bottom: 20px;
+	}
+}
+.label {
+	margin-bottom: 5px;
+	margin-left: 5px;
+	span {
+		color: #E63838;
+	}
+}

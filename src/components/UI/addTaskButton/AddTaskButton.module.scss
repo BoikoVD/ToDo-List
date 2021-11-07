@@ -1,0 +1,24 @@
+.addTask {
+	background-color: #E63838;
+	width: 70px;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 40px;
+	font-weight: 300;
+	cursor: pointer;
+	border: none;
+	transition: all 0.3s ease 0s;
+	@media (max-width: 480px){
+		width: 60px;
+		height: 60px;
+	}
+	@media (any-hover: hover) {
+		&:hover{
+			background-color: #BF1414;
+		}
+	}
+}

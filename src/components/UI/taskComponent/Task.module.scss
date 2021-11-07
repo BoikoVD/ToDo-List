@@ -1,0 +1,44 @@
+.task {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid lightgray;
+	padding: 10px 10px;
+	background-color: #fff;
+	transition: all 0.3s ease 0s;
+	@media (max-width: 480px){
+		padding: 5px 5px;
+	}
+}
+.taskNotDone {
+	background-color: #fff;
+}
+.taskDone {
+	background-color: #f0f0f0;
+}
+.text {
+	margin: 0 20px;
+	flex: 1 1 auto;
+	transition: all 0.3s ease 0s;
+}
+.textNotDone {
+	text-decoration: none;
+}
+.textDone {
+	text-decoration: line-through;
+	color: gray;
+}
+.title {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 20px;
+	transition: all 0.3s ease 0s;
+}
+.titleNotDone {
+	color: #E63838;
+}
+.titleDone {
+	color: gray;
+}
+.description {
+	margin-bottom: 5px;
+}
