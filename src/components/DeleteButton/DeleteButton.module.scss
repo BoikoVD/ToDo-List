@@ -3,8 +3,6 @@
 	border: none;
 	padding: 5px;
 	cursor: pointer;
-}
-.deleteNotDone {
 	svg {
 		color: #FF9C9C;
 	}
@@ -16,7 +14,8 @@
 		}
 	}
 }
-.deleteDone {
+
+.deleteIsDone {
 	svg {
 		color: lightgray;
 	}
@@ -28,6 +27,7 @@
 		}
 	}
 }
+
 svg {
 	transition: all 0.3s ease 0s;
 	width: 25px;

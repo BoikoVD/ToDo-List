@@ -9,21 +9,16 @@
 		padding: 5px 5px;
 	}
 }
-.taskNotDone {
-	background-color: #fff;
-}
-.taskDone {
+.taskIsDone {
 	background-color: #f0f0f0;
 }
 .text {
 	margin: 0 20px;
 	flex: 1 1 auto;
 	transition: all 0.3s ease 0s;
-}
-.textNotDone {
 	text-decoration: none;
 }
-.textDone {
+.textIsDone {
 	text-decoration: line-through;
 	color: gray;
 }
@@ -32,11 +27,9 @@
 	margin-bottom: 5px;
 	font-size: 20px;
 	transition: all 0.3s ease 0s;
-}
-.titleNotDone {
 	color: #E63838;
 }
-.titleDone {
+.titleIsDone {
 	color: gray;
 }
 .description {

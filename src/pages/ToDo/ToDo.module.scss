@@ -21,16 +21,6 @@
 	@media (max-width: 480px){
 		margin-bottom: 10px;
 	}
-	button {
-		background-color: #fff;
-		color: #000;
-		@media (any-hover: hover) {
-			&:hover{
-				background-color: #fff;
-				text-decoration: underline;
-			}
-		}
-	}
 }
 .title {
 	text-overflow: ellipsis;

@@ -1,12 +1,13 @@
 import React from 'react';
 import cl from './Modal.module.scss';
+import cn from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
-import AddTask from '../addTaskForm/AddTask';
-import DeleteTask from '../deleteTaskForm/DeleteTask';
+import AddTaskForm from '../AddTaskForm/AddTaskForm';
+import DeleteTaskForm from '../DeleteTaskForm/DeleteTaskForm';
 
 function Modal() {
 	const dispatch = useDispatch();
-	const modal = useSelector(state => state.modal.onModal);
+	const onModal = useSelector(state => state.modal.onModal);
 	const modalType = useSelector(state => state.modal.modalType);
 
 	const closeModal = () => {
@@ -14,9 +15,11 @@ function Modal() {
 	}
 
 	return (
-		<div className={modal ? [cl.modal, cl.active].join(' ') : cl.modal} onClick={closeModal}>
+		<div onClick={closeModal} className={cn(cl.modal, {
+			[cl.active]: onModal
+		})} >
 			<div className={cl.content} onClick={(e) => { e.stopPropagation() }}>
-				{(modalType === 'addTask') ? <AddTask /> : (modalType === 'deleteTask') ? <DeleteTask /> : ''}
+				{(modalType === 'addTask') ? <AddTaskForm /> : (modalType === 'deleteTask') ? <DeleteTaskForm /> : ''}
 			</div>
 		</div>
 	);

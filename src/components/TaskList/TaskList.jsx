@@ -1,5 +1,6 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
-import Task from '../taskComponent/Task';
+import Task from '../Task/Task';
 import cl from './TaskList.module.scss';
 
 function TaskList() {

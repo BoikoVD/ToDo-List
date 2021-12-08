@@ -1,19 +1,21 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import cl from './DeleteTask.module.scss';
-import Button from '../button/Button';
+import cl from './DeleteTaskForm.module.scss';
+import Button from '../Button/Button';
 
-function DeleteTask() {
+function DeleteTaskForm() {
 	const [isLoading, setIsLoading] = React.useState(false);
 	const dispatch = useDispatch();
 	const modalTask = useSelector(state => state.modal.task);
 	const userName = useSelector(state => state.currentUser.userName);
 
-	const clickOnBack = () => {
+	const back = (e) => {
+		e.preventDefault();
 		dispatch({ type: "CLOSE_MODAL", onModal: false });
 	}
-	const clickOnDelete = async () => {
+	const submitForm = async (e) => {
+		e.preventDefault();
 		setIsLoading(true);
 		await axios.post('/deletetask', {
 			userName: userName,
@@ -26,16 +28,16 @@ function DeleteTask() {
 	}
 
 	return (
-		<div className={cl.deleteTask}>
+		<form className={cl.deleteTask} onSubmit={submitForm}>
 			<div className={cl.text}>
 				Are you sure?
 			</div>
 			<div className={cl.buttons}>
-				<Button onClick={clickOnBack}>Back</Button>
-				<Button onClick={clickOnDelete} disabled={isLoading}>{isLoading ? '...' : 'Delete'}</Button>
+				<Button onClick={back} color='red'>Back</Button>
+				<Button color='red' disabled={isLoading}>{isLoading ? '...' : 'Delete'}</Button>
 			</div>
-		</div>
+		</form>
 	);
 }
 
-export default DeleteTask;
+export default DeleteTaskForm;

@@ -1,0 +1,33 @@
+.modalAddTask {
+	display: flex;
+	flex-direction: column;
+	width: 250px;
+	input, textarea {
+		margin-bottom: 20px;
+	}
+}
+.label {
+	margin-bottom: 5px;
+	margin-left: 5px;
+	span {
+		color: #E63838;
+	}
+}
+.inputWrapper {
+	position: relative;
+}
+.errorMessage {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	color: #E63838;
+	font-size: 12px;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+.active {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: all;
+}

@@ -1,16 +1,17 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import cl from './Task.module.scss';
+import cn from 'classnames';
 import axios from 'axios';
-import DeleteTaskButton from '../deleteTaskButton/DeleteTaskButton';
-import TaskCheckbox from '../taskCheckbox/TaskCheckbox';
+import DeleteButton from '../DeleteButton/DeleteButton';
+import Checkbox from '../Checkbox/Checkbox';
 
 function Task({ task }) {
 	const dispatch = useDispatch();
 	const userName = useSelector(state => state.currentUser.userName);
 	const userTasks = useSelector(state => state.currentUser.tasks);
 
-	const clickOnCheckbox = () => {
+	const checkTask = () => {
 		for (let userTask of userTasks) {
 			if (userTask.taskName === task.taskName && userTask.taskDescription === task.taskDescription) {
 				userTask.isDone = !userTask.isDone;
@@ -24,17 +25,23 @@ function Task({ task }) {
 	}
 
 	return (
-		<div className={task.isDone ? [cl.task, cl.taskDone].join(' ') : [cl.task, cl.taskNotDone].join(' ')}>
-			<TaskCheckbox isDone={task.isDone} clickOnCheckbox={clickOnCheckbox} />
-			<div className={task.isDone ? [cl.text, cl.textDone].join(' ') : [cl.text, cl.textNotDone].join(' ')}>
-				<div className={task.isDone ? [cl.title, cl.titleDone].join(' ') : [cl.title, cl.titleNotDone].join(' ')}>
+		<div className={cn(cl.task, {
+			[cl.taskIsDone]: task.isDone
+		})}>
+			<Checkbox isChecked={task.isDone} onClick={checkTask} />
+			<div className={cn(cl.text, {
+				[cl.textIsDone]: task.isDone
+			})}>
+				<div className={cn(cl.title, {
+					[cl.titleIsDone]: task.isDone
+				})}>
 					{task.taskName}
 				</div>
 				<div className={cl.description}>
 					{task.taskDescription}
 				</div>
 			</div>
-			<DeleteTaskButton isDone={task.isDone} task={task} />
+			<DeleteButton isDone={task.isDone} task={task} />
 		</div>
 	);
 }
