@@ -28,7 +28,7 @@ function Task({ task }) {
 		<div className={cn(cl.task, {
 			[cl.taskIsDone]: task.isDone
 		})}>
-			<Checkbox isChecked={task.isDone} onClick={checkTask} />
+			<Checkbox isChecked={task.isDone} onClick={checkTask} aria-label='check task' />
 			<div className={cn(cl.text, {
 				[cl.textIsDone]: task.isDone
 			})}>
@@ -41,7 +41,7 @@ function Task({ task }) {
 					{task.taskDescription}
 				</div>
 			</div>
-			<DeleteButton isDone={task.isDone} task={task} />
+			<DeleteButton isDone={task.isDone} task={task} aria-label='delete task' />
 		</div>
 	);
 }
